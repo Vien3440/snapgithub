@@ -19,13 +19,30 @@ export class FaceSnapComponent implements OnInit {
    nb_snap!: number;
    img_url!: string;
 
+   button_text!: string;
+
    ngOnInit(){
       this.titel = "Stalker Anomaly Gamma";
       this.description = "Partez à l’aventure en arpentant l’un des plus beaux sentiers de randonnée de chernobyl !";
       this.date = new Date();
       this.nb_snap = 33;
       this.img_url = "https://cdnb.artstation.com/p/assets/images/images/017/938/725/large/k-anomalyfield-02.jpg?1557923649" 
+      
+      this.button_text = "+1 snap"
    }
+
+   onAddSnap(  ){
+      if( this.button_text == "+1 snap"){
+         this.button_text = "ne plus sanpé :'( "
+         this.nb_snap++; 
+      }else{
+         this.button_text = "+1 snap"
+         this.nb_snap--;
+      }
+   } 
+
+
+
    
 
    

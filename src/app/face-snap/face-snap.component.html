@@ -1,5 +1,13 @@
-<h2>{{titel}}</h2>
-<h3>{{description}}</h3>
-<h4>{{date}}</h4>
-<h4>👍{{nb_snap}} </h4>
-<img [src] = "img_url" alt="titel">
+<div class="face-snap-card">
+    <!-- : String interpolation -->
+    <h2>{{ titel }}</h2>
+    <p> Mise en ligne le : {{ date }}</p>
+    <h3>{{ description }}</h3>
+    <h4>👍{{ nb_snap }} 
+    <p>
+        <button (click)="onAddSnap()"> {{ button_text }} </button>
+    </p>
+    </h4>
+    <!-- : attribute binding -->
+    <img [src] = "img_url" alt="titel">
+</div>
