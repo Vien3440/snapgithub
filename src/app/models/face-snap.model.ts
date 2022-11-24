@@ -25,11 +25,30 @@ export class FaceSnap {
     /*La méthode constructeur est une méthode spéciale d'une classe
     pour créer et initialiser une instance d'objet de cette classe.
     */
-    constructor(public titel: string,
-                public description: string,
-                public date: Date,
-                public nb_snap: number,
-                public img_url: string){
 
-                }
+    
+//    constructor(public titel: string,
+//                public description: string,
+//                public date: Date,
+//                public nb_snap: number,
+//                public img_url: string,
+//                // Le ? permet de rendre optionnelle la proprieté 
+//                public localisation?: string){
+//
+//                }
+    
+
+    /* Pour ne pas surcharger l'empreinte du constructeur (trop d'argument).
+    Je modifie la classe en supriment le constructeur pour simpliment lister 
+    les propriétés et leurs types*/
+
+    titel! : string;
+    description!: string;
+    date!: Date;
+    nb_snap!: number;
+    img_url!: string;
+    localisation?: string;
+
+
+    
 }
