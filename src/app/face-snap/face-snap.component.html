@@ -1,15 +1,35 @@
-<div class="face-snap-card">
+<div class="face-snap-card" [ngClass]="{'snaped': button_text === '-1 snap'}">
     <!-- : String interpolation -->
     <h2>{{ faceSnap.titel }}</h2>
-    <p> Mise en ligne le : {{ faceSnap.date }}</p>
+    <p> Mise en ligne le : {{ faceSnap.date | date: 'à HH:mm, le MMM yyy'}}</p>
     <h3 *ngIf="faceSnap.localisation"> Photo prise à {{faceSnap.localisation}}</h3>
     <h3>{{ faceSnap.description }}</h3>
-    <h4>👍{{ faceSnap.nb_snap }} 
-    <p>
-        <button (click)="onAddSnap()"> {{ button_text }} </button>
-    </p>
-    </h4>
     <!-- : attribute binding -->
-    <img [src] = "faceSnap.img_url" alt="faceSnap.titel">
+    <div class="conteneur_img">
+        <img [src] = "faceSnap.img_url" alt="faceSnap.titel">
+        <div class="conteneur_nb_snaps">
+            <button (click)="onAddSnap()"> {{ button_text }} </button>
+            <h4>
+            <!-- effet couleur sur nombre de snaps -->
+                <span [ngStyle]="{color: 'rgb(0, ' + faceSnap.nb_snap * 8 + ', 0)' }">
+                    {{ faceSnap.nb_snap }}
+                </span>
+            </h4>            
+        </div>
+    </div>
+    <div class="test_pipe">
+<!-- DecimalPipe -->
+       <p>{{ 56154656333.333 }}</p>
+       <p>{{ 56154656333.333 | number }}</p>
+       <p>{{ 56154656333.333 | number: '1.0-0' }}</p>
+       <p>{{ 56154656333.333 | number: '1.0-1' }}</p>
+<!-- PercentPipe -->
+       <p>{{ 0.333 | percent }}</p>
+       <p>{{ 0.333 | percent: '1.0-1' }}</p>
+<!-- CurrencyPipe -->
+        <p>{{ 56154656333.333 | currency }}</p>
+        <p>{{ 56154656333.333 | currency: 'EUR' }}</p>
+        <p>{{ 56154656333.333 | currency: 'EUR' : 'code' }}</p>
+    </div>
 </div>
 

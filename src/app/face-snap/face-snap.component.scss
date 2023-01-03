@@ -1,7 +1,95 @@
-.face-snap-card{
-    width: 35%;
 
-    img{
-        width: 100%;
+
+
+.face-snap-card{
+    width: 100%;
+    min-width: 210px;
+    padding: 1em;
+    margin-bottom: 2%;
+    top: 2%;
+    background-color: rgb(16 18 27 / 40%);       
+    color: #f9fafb;
+    backdrop-filter:blur(20px);
+    border-radius: 3%;
+
+    &.snaped{
+        background-color: rgba(lightgreen, 0.4);
+        color: darkgreen;
+        button {
+          box-shadow: lightgreen 3px 3px 7px;
+          color: darkgreen;
+          &:active {
+            box-shadow: lightgreen 0 0 5px;
+          }
+        }      
+    }
+        h2{
+            font-family: "Poppins_m";
+            font-size: 2em;
+            margin-top: 1em;
+        }
+        p{
+            font-family: "Poppins_xs";
+            font-style: italic;
+            font-size: 1em;
+            line-height: 1.5em;
+            margin-top: 0.6em;
+            margin-bottom: 1.8em;
+        }
+        h3{
+            font-family: "Poppins_xs";
+            text-align: justify;
+            line-height: 1.5em;
+            margin-bottom: 1em; 
+        }
+        .conteneur_img{
+            img{
+                width: 100%;
+            }   
+        }
+
+        .conteneur_nb_snaps{
+            font-family: "Poppins_m";
+            color: rgba(249, 250, 251, 0.536);
+            margin-top: 2em;
+            display: flex;
+            flex-direction: row;
+            button{
+                color: inherit;
+                background: none;
+                border: 1px solid;
+                border-color: inherit;
+                border-radius: 25px;
+                padding-left: 24px;
+                padding-right: 24px;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                min-width: 185px;
+            }
+          
+
+            h4{
+                margin-left: 10px;
+                padding-top: 6px;
+            }
+    }
+}
+
+ // Média queries pour tablette et ordianteur 
+
+@media screen and ( min-width: 765px ){
+    
+    .face-snap-card{
+
+        
+        .conteneur_img{
+            img{
+                padding: 5%;
+                width: 100%;
+            }   
+        }
+    }
+    button:hover{
+        background-color: rgba(0, 128, 255, 0.416);
     }
 }

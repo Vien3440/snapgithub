@@ -41,7 +41,7 @@ export class FaceSnapComponent implements OnInit {
 
    onAddSnap(  ){
          if( this.button_text == "+1 snap"){
-            this.button_text = "ne plus sanpé :'( "
+            this.button_text = "-1 snap"
             this.faceSnap.nb_snap++; 
          }else{
             this.button_text = "+1 snap"
