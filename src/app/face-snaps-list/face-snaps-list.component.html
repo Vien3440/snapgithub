@@ -1,0 +1,11 @@
+<div class="page_warp">
+    <div class="video-bg">
+
+      </div>
+    <!-- <app-face-snap [faceSnap]="myFaceSnap"></app-face-snap> -->
+    
+    <!-- <app-face-snap [faceSnap]="faceSnap1"></app-face-snap>
+        <app-face-snap [faceSnap]="faceSnap2"></app-face-snap>
+        <app-face-snap [faceSnap]="faceSnap3"></app-face-snap> -->
+        <app-face-snap *ngFor=" let faceSnap of faceSnaps" [faceSnap]="faceSnap"></app-face-snap>
+</div>

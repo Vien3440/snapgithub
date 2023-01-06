@@ -1,0 +1,18 @@
+header {
+    #contain-header{
+        width: 100%;
+        background-color: rgb(16 18 27 / 73%);
+        margin-bottom: 1em;
+        border-radius: 2em;
+
+        h1{
+            color: #fff;
+            text-align: center;
+            font-family: "Poppins_m";
+            font-size: 2em;
+            $nb_marg_header : 3.5em;
+            padding-top: $nb_marg_header;
+            padding-bottom: $nb_marg_header;
+        }
+    }
+}
