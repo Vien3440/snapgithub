@@ -1,6 +1,6 @@
 import { Component, Input, OnInit,  } from '@angular/core';
 import { FaceSnap } from '../models/face-snap.model';
-
+import { FaceSnapsService } from '../services/face-snaps.service';
 
 /* Décorateur. 
 Apporter des modifications à une classe*/
@@ -15,9 +15,11 @@ Apporter des modifications à une classe*/
 //  pour avoir créé des propriétés sans les initialiser 
 export class FaceSnapComponent implements OnInit {
 
+constructor(private faceSnapsService: FaceSnapsService) {}
+
    /*Pour qu'une propriété puisse être injectée depuis
    l'extérieur d'un Component  ici "FaceSnapComponent" , il faut lui ajouter le décorateur  @Input()*/
-   @Input() faceSnap!  : FaceSnap;
+   @Input() faceSnap!: FaceSnap;
    button_text!: string;
 
 //   titel!: string;
@@ -42,10 +44,10 @@ export class FaceSnapComponent implements OnInit {
    onAddSnap(  ){
          if( this.button_text == "+1 snap"){
             this.button_text = "-1 snap"
-            this.faceSnap.nb_snap++; 
+            this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'unsnap')
          }else{
             this.button_text = "+1 snap"
-            this.faceSnap.nb_snap--;
+            this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'snap')
          }
    } 
 }

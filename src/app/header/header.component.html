@@ -1,5 +1,12 @@
 <header>
-    <div id="contain-header">
+  
         <h1> Snap Face </h1>
-    </div>
+    
+    <nav>
+        <!--la directive routerLink permet de créer des liens vers des routes dans l'applications.
+        On lui passe la chaîne de caractères qui correspond à la route vers laquelle on veut créer le lien.-->
+        <a routerLink="" routerLinkActive="acttive" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a routerLink="facesnaps" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">FaceSnaps</a>
+        <button (click)="pathFaceSnap()">Face Snaps</button>
+    </nav>
 </header>

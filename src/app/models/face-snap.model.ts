@@ -41,7 +41,7 @@ export class FaceSnap {
     /* Pour ne pas surcharger l'empreinte du constructeur (trop d'argument).
     Je modifie la classe en supriment le constructeur pour simpliment lister 
     les propriétés et leurs types*/
-
+    id!: number;
     titel! : string;
     description!: string;
     date!: Date;
